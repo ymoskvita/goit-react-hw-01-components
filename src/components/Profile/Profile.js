@@ -1,32 +1,33 @@
 import PropTypes from 'prop-types';
+import { Section, Wrapper, StatsList, StatsItem, Avatar, Username, Tag, Label, Quantity } from './Profile.styled';
 
-const Profile = ({ avatar, username, tag, location, followers, views, likes }) => {
+const Profile = ({ avatar, username, tag, location, stats }) => {
   return (
-    <section>
-      <div>
-        <img
+    <Section>
+      <Wrapper>
+        <Avatar
           src={avatar}
           alt="User avatar"
         />
-        <p>{username}</p>
-        <p>@{tag}</p>
-        <p>{location}</p>
-      </div>
-      <ul>
-        <li>
-          <span>Followers</span>
-          <span>{followers}</span>
-        </li>
-        <li>
-          <span>Views</span>
-          <span>{views}</span>
-        </li>
-        <li>
-          <span>Likes</span>
-          <span>{likes}</span>
-        </li>
-      </ul>
-    </section>);
+        <Username>{username}</Username>
+        <Tag>@{tag}</Tag>
+        <Tag>{location}</Tag>
+      </Wrapper>
+      <StatsList>
+        <StatsItem>
+          <Label>Followers</Label>
+          <Quantity>{stats.followers}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Views</Label>
+          <Quantity>{stats.views}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Likes</Label>
+          <Quantity>{stats.likes}</Quantity>
+        </StatsItem>
+      </StatsList>
+    </Section>);
 };
 
 Profile.propTypes = {
