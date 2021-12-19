@@ -4,7 +4,8 @@ export const Table = styled.table`
     color: #686461;
     border: 1px solid #DCDCDC;
     border-radius: 5px;
-    width: 100%;
+    width: 50%;
+    margin: 50px auto 0;
     text-align: center;
     text-transform: capitalize;
 `;
